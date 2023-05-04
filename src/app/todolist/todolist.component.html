@@ -1,0 +1,120 @@
+<!-- <div class="container" style="background-color: rgb(248, 208, 208);margin-top: 2rem;">
+    <br><br>
+    <div class="row justify-content-sm-center">
+        <p style="text-align: center;">Welcome to ToDoApp</p>
+        <div class="col-sm-6">
+            <form #todo="ngForm" (ngSubmit)="submit(todo)">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input class="form-control" placeholder="Provide your title" ngModel name="title" />
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input class="form-control" placeholder="Provide your description" ngModel name="description" />
+                </div>
+
+                <div class="form-group">
+                    <div style="display: flex; margin-top: 10px;">
+                        <button type="submit" class="btn btn-primary" style="margin-left: auto; width: 30%;">
+                            Submit
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br><br>
+</div>
+<br><br><br><br>
+<div class="jumbotron" *ngIf="allItems.length > 0">
+    <div style="text-align: center;">
+        <h3>Your ToDos</h3>
+        <div *ngFor="let item of allItems">
+            <h5>Title : {{item.title}}</h5>
+            <p>Description : {{item.description}}</p>
+            <button type="button" class="btn btn-dark btn-lg"><i class="fa fa-apple"></i> Download</button>
+            <button type="button" class="btn btn-outline-light btn-lg"><i class="fa fa-android"></i> Download</button>
+        </div>
+    </div>
+</div> -->
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <div class="card" id="list1" style="border-radius: .75rem; background-color: #fcfcfc;">
+                    <div class="card-body py-4 px-4 px-md-5">
+
+                        <p class="h1 text-center mt-3 mb-4 pb-3">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp"
+                                        alt="Check" width="60">
+                            <span> Todo's</span>
+                        </p>
+                        <hr class="my-4">
+
+                        <div class="pb-2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <form #todo="ngForm" (ngSubmit)="submit(todo)">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <input type="text" class="form-control form-control-lg" ngModel
+                                                name="description" id="exampleFormControlInput1"
+                                                placeholder="Add new...">
+                                            <!-- <a href="#!" data-mdb-toggle="tooltip" title="Set due date"><i
+                                                    class="fas fa-calendar-alt fa-lg me-3"></i></a> -->
+                                            <div>
+                                                <button type="submit" class="btn btn-primary"
+                                                    style="margin-left: 12px;">Add</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+                        <div class="container h-100">
+                            <div class="row d-flex justify-content-center align-items-center h-100">
+                              <div class="col-md-12 col-xl-10">
+                        
+                                <div class="card mask-custom">
+                                  <div class="card-body p-4 ">
+                        
+                                    <div class="text-center pt-3 pb-2">
+                                      <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-todo-list/check1.webp"
+                                        alt="Check" width="60"> -->
+                                      <h2 class="my-4">Task List</h2>
+                                    </div>
+                        
+                                    <table class="table  mb-0">
+                                      <thead>
+                                        <tr>
+                                          <th scope="col">Task's</th>
+                                          <th scope="col">Actions</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr class="fw-normal" *ngFor="let item of allItems let i = index">
+                                          <td class="align-middle">
+                                            <span [ngClass]="{'text-decoration-line-through': getStatus(item)}">{{item.description}}</span>
+                                          </td>
+                                          <td class="align-middle">
+                                            <span  (click)="markAsDone(item,i)" title="{{getStatus(item) ? 'Mark As Undone' : 'Mark As Done'}}"><i
+                                                class="fa fa-check fa-lg text-success me-3"></i></span>
+                                            <span data-mdb-toggle="tooltip" (click)="removeTask(item,i)" title="Remove"><i
+                                                class="fa fa-trash fa-lg text-warning"></i></span>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>

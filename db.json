@@ -1,0 +1,28 @@
+{
+  "notes": [
+    {
+      "description": "Call Sam For payments",
+      "status": false,
+      "id": 5,
+      "isEditClick": false
+    },
+    {
+      "description": "Make payment to Bluedart",
+      "status": true,
+      "id": 8,
+      "isEditClick": false
+    },
+    {
+      "description": "Buy groceries for next week",
+      "status": true,
+      "id": 9,
+      "isEditClick": false
+    },
+    {
+      "description": "Office grocery shopping",
+      "status": true,
+      "id": 10,
+      "isEditClick": false
+    }
+  ]
+}
